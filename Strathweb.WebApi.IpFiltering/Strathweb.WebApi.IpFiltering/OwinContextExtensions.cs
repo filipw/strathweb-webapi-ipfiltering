@@ -9,6 +9,8 @@ namespace Strathweb.WebApi.IpFiltering
     {
         public static bool IsIpAllowed(this IOwinContext ctx)
         {
+            if (ctx.Request.LocalIpAddress == ctx.Request.RemoteIpAddress) return true;
+
             var ipAddress = ctx.Request.RemoteIpAddress;
             var ipFiltering = ConfigurationManager.GetSection("ipFiltering") as IpFilteringSection;
             if (ipFiltering != null && ipFiltering.IpAddresses != null && ipFiltering.IpAddresses.Count > 0)

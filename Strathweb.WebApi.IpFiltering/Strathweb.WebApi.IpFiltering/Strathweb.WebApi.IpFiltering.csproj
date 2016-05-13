@@ -67,6 +67,7 @@
     <Compile Include="Configuration\IpFilteringSection.cs" />
     <Compile Include="IpFilterAttribute.cs" />
     <Compile Include="IpFilterHandler.cs" />
+    <Compile Include="IpFilterMiddleware.cs" />
     <Compile Include="OwinContextExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
