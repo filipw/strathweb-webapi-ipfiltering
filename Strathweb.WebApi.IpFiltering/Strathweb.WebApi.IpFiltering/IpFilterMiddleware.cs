@@ -15,8 +15,10 @@ namespace Strathweb.WebApi.IpFiltering
             {
                 await Next.Invoke(context);
             }
-
-            context.Response.StatusCode = 403;
+            else
+            {
+                context.Response.StatusCode = 403;
+            }
         }
     }
 }
